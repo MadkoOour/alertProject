@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Alert from "./components/ui/Alert/Alert";
+import { Ban, BellRing, CheckCheck, FileWarning, Info } from "lucide-react";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div style={{ margin: "2rem" }}>
+      <Alert
+        type="alert-default"
+        icon={<BellRing size={20} />}
+        title={"Upgrade Your plan"}
+        description={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo nulla nam ratione cupiditate? Culpa, doloremque asperiores quisquam delectus reprehenderit nulla amet velit architecto ut, quas repellendus eius mollitia quod."
+        }
+      />
+      <Alert
+        type="alert-danger"
+        icon={<Ban size={20} />}
+        title={"Something Went Wrong"}
+        description={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo nulla nam ratione cupiditate? Culpa, doloremque asperiores quisquam delectus reprehenderit nulla amet velit architecto ut, quas repellendus eius mollitia quod."
+        }
+      />
+      <Alert
+        type="alert-success"
+        icon={<CheckCheck size={20} />}
+        title={"Your Order has been processed"}
+        description={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo nulla nam ratione cupiditate? Culpa, doloremque asperiores quisquam delectus reprehenderit nulla amet velit architecto ut, quas repellendus eius mollitia quod."
+        }
+      />
+      <Alert type="alert-info" icon={<Info size={20} />} title={"Note"}>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo
+          nulla nam ratione cupiditate? Culpa, <a href="/">doloremque</a> asperiores quisquam
+          delectus reprehenderit nulla amet velit architecto ut, quas
+          repellendus eius mollitia quod.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      </Alert>
+      <Alert
+        type="alert-warning"
+        icon={<FileWarning size={20} />}
+        title={"Tips & Tricks"}
+        description={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo nulla nam ratione cupiditate? Culpa, doloremque asperiores quisquam delectus reprehenderit nulla amet velit architecto ut, quas repellendus eius mollitia quod."
+        }
+      />
+    </div>
+  );
+};
 
-export default App
+export default App;
